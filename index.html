@@ -265,8 +265,44 @@
         gap: 1.5rem;
       }
     }
+
+    label:hover, label:active{
+        color:#06b6d4;
+    }
   </style>
   <body class="bg-slate-900 text-white">
+    <!-- Success Modal -->
+    <div id="messageModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+      <div class="bg-slate-800 p-8 rounded-lg max-w-md w-full mx-4 transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
+        <div class="text-center">
+          <div class="mb-4">
+            <div class="w-16 h-16 mx-auto bg-green-500 rounded-full flex items-center justify-center">
+              <i class="fas fa-check text-white text-2xl"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Message Sent!</h3>
+          <p class="text-gray-300 mb-6">Thank you for your message. I'll get back to you as soon as possible.</p>
+          <button onclick="closeModal()" class="bg-cyan-500 hover:bg-cyan-600 px-6 py-2 rounded-lg font-semibold transition-all duration-300 text-white">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+      <div class="bg-slate-800 p-8 rounded-lg max-w-md w-full mx-4 transform transition-all duration-300 scale-95 opacity-0" id="errorModalContent">
+        <div class="text-center">
+          <div class="mb-4">
+            <div class="w-16 h-16 mx-auto bg-red-500 rounded-full flex items-center justify-center">
+              <i class="fas fa-exclamation-triangle text-white text-2xl"></i>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Error</h3>
+          <p class="text-gray-300 mb-6" id="errorMessage">Something went wrong. Please try again.</p>
+          <button onclick="closeErrorModal()" class="bg-red-500 hover:bg-red-600 px-6 py-2 rounded-lg font-semibold transition-all duration-300 text-white">Close</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-slate-900/95 backdrop-blur-sm z-50 border-b border-slate-800" id="navbar">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -575,7 +611,9 @@
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold mb-3">Killing Intent</h3>
-              <p class="text-gray-300 mb-4">A Card game where in you play as a detective, investigator or a witness, an idea created by, organized, and managed by me with my team.</p>
+              <p class="text-gray-300 mb-4">
+                A Card game where in you play as a detective, investigator or a witness, an idea created by, organized, and managed by me with my team.
+              </p>
               <div class="flex flex-wrap gap-2 mb-4">
                 <span class="bg-indigo-500/20 text-blue-400 px-2 py-1 rounded text-sm">Canva</span>
                 <span class="bg-zinc-500/20 text-zinc-300 px-2 py-1 rounded text-sm">Unity</span>
@@ -597,7 +635,9 @@
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold mb-3">Arboresque</h3>
-              <p class="text-gray-300 mb-4">A Novel game inspired by the famous "Dungeons and Dragons" designed with canva and created with unity with my teammates, story written by myself. </p>
+              <p class="text-gray-300 mb-4">
+                A Novel game inspired by the famous "Dungeons and Dragons" designed with canva and created with unity with my teammates, story written by myself.
+              </p>
               <div class="flex flex-wrap gap-2 mb-4">
                 <span class="bg-indigo-500/20 text-blue-400 px-2 py-1 rounded text-sm">Canva</span>
                 <span class="bg-zinc-500/20 text-zinc-300 px-2 py-1 rounded text-sm">Unity</span>
@@ -617,13 +657,13 @@
         <h2 class="text-4xl font-bold text-center mb-16">Get In <span class="text-cyan-400">Touch</span></h2>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Left Side - Contact Info and Form -->
           <div>
             <h3 class="text-2xl font-bold mb-6">Let's work together</h3>
             <p class="text-gray-300 mb-8">
               I'm always open to discussing new opportunities, interesting projects, or just having a chat about web development. Feel free to reach out!
             </p>
-
-            <div class="space-y-4">
+            <div class="flex space-x-4 mb-8">
               <div class="flex items-center">
                 <div class="bg-cyan-500 p-3 rounded-lg mr-4">
                   <i class="fas fa-envelope text-white"></i>
@@ -645,87 +685,113 @@
               </div>
             </div>
 
-            <div class="mt-8">
-              <h4 class="text-lg font-semibold mb-4">Follow Me</h4>
-              <div class="flex space-x-4">
-                <a
-                  href="https://www.linkedin.com/in/pierre-eldric-avestruz-7ab829254/"
-                  target="_blank"
-                  class="bg-slate-800 p-3 rounded-lg hover:bg-cyan-500 transition-colors"
-                >
-                  <i class="fab fa-linkedin text-xl"></i>
-                </a>
-                <a href="https://github.com/Eldicky" target="_blank" class="bg-slate-800 p-3 rounded-lg hover:bg-cyan-500 transition-colors">
-                  <i class="fab fa-github text-xl"></i>
-                </a>
-                <a href="https://www.facebook.com/Lil.Eldicky" target="_blank" class="bg-slate-800 p-3 rounded-lg hover:bg-cyan-500 transition-colors">
-                  <i class="fab fa-facebook-f text-xl"></i>
-                </a>
-                <a href="/public/CV - PIERRE ELDRIC D. AVESTRUZ.pdf" download class="bg-slate-800 p-3 rounded-lg hover:bg-cyan-500 transition-colors">
-                  <i class="fa-regular fa-file-pdf text-xl"></i>
-                </a>
+            <!-- ✅ Closed Left Column -->
+
+            <!-- Message Form -->
+            <div class="max-w-2xl mx-auto bg-slate-800 p-8 rounded-lg mt-9">
+                <h2 class="text-3xl font-bold text-white mb-6 text-center">Contact Me</h2>
+              
+                <form class="space-y-6">
+                  <div>
+                    <label for="name" class="block text-sm font-medium text-gray-300">Name
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      class="w-full mt-2 px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 text-white"
+                    placeholder="Your Name"
+                      />
+                    </label>
+                  </div>
+              
+                  <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300">Email
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      class="w-full mt-2 px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 text-white"
+                    placeholder="Your Email"
+                      />
+                    </label>
+                  </div>
+              
+                  <div>
+                    <label for="subject" class="block text-sm font-medium text-gray-300">Subject
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      required
+                      class="w-full mt-2 px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 text-white"
+                    placeholder="Subject of your message"
+                      />
+                      
+                  </div>
+              
+                  <div>
+                    <label for="message" class="block text-sm font-medium text-gray-300">Message
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="5"
+                      required
+                      class="w-full mt-2 px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 resize-none text-white"
+                        placeholder="Your message here"
+                      ></textarea>
+                      
+                  </div>
+              
+                  <button
+                    type="submit"
+                    class="w-full bg-cyan-500 hover:bg-cyan-600 px-8 py-3 rounded-lg font-semibold transition-all duration-300 glow-effect"
+                  >
+                    <i class="fas fa-paper-plane mr-2"></i>Send Message
+                  </button>
+                </form>
               </div>
             </div>
-          </div>
+ 
 
+        <!-- Right Side - CV Preview and Social Links -->
+        <div>
+          <!-- CV Preview -->
           <div class="bg-slate-800 p-8 rounded-lg">
-            <form class="space-y-6">
-              <div>
-                <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
-                  placeholder="Your Name"
-                  required
-                />
+            <!-- CV Preview Display -->
+            <div class="bg-white rounded-lg p-6 mb-6 shadow-lg">
+              <div class="text-gray-800">
+                <img src="cv.png" alt="My Resume" class="w-full h-auto rounded-lg mb-4" />
               </div>
-
-              <div>
-                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
-                  placeholder="your@email.com"
-                  required
-                />
-              </div>
-
-              <div>
-                <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
-                  placeholder="Project Discussion"
-                  required
-                />
-              </div>
-
-              <div>
-                <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 resize-none"
-                  placeholder="Tell me about your project..."
-                  required
-                ></textarea>
-              </div>
-
-              <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-600 px-8 py-3 rounded-lg font-semibold transition-all duration-300 glow-effect">
-                <i class="fas fa-paper-plane mr-2"></i>Send Message
-              </button>
-            </form>
+            </div>
+            <!-- Download Button -->
+            <a
+              href="/public/CV - PIERRE ELDRIC D. AVESTRUZ.pdf"
+              download
+              class="w-full bg-cyan-500 hover:bg-cyan-600 px-8 py-3 rounded-lg font-semibold transition-all duration-300 glow-effect inline-flex items-center justify-center"
+            >
+              <i class="fa-regular fa-file-pdf mr-2"></i>Download CV
+            </a>
           </div>
         </div>
       </div>
     </section>
+
+    <div>
+      <div class="flex place-content-center space-x-4 mb-3">
+        <h4 class="text-lg font-semibold pt-3">My Socials:</h4>
+        <a href="https://www.linkedin.com/in/pierre-eldric-avestruz-7ab829254/" target="_blank" class="bg-slate-800 p-3 rounded-lg hover:bg-cyan-500 transition-colors">
+          <i class="fab fa-linkedin text-xl"></i>
+        </a>
+        <a href="https://github.com/Eldicky" target="_blank" class="bg-slate-800 p-3 rounded-lg hover:bg-cyan-500 transition-colors">
+          <i class="fab fa-github text-xl"></i>
+        </a>
+        <a href="https://www.facebook.com/Lil.Eldicky" target="_blank" class="bg-slate-800 p-3 rounded-lg hover:bg-cyan-500 transition-colors">
+          <i class="fab fa-facebook-f text-xl"></i>
+        </a>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-slate-800 border-t border-slate-700 py-8">
@@ -736,7 +802,6 @@
         </div>
       </div>
     </footer>
-    <!-- <script src="/public/js/index.js"></script> -->
     <script>
       // Smooth scrolling for navigation links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -786,7 +851,6 @@
 
         // Simple validation
         if (!name || !email || !subject || !message) {
-          alert("Please fill in all fields.");
           return;
         }
 
@@ -798,7 +862,6 @@
         submitBtn.disabled = true;
 
         setTimeout(() => {
-          alert("Message sent successfully! I'll get back to you soon.");
           this.reset();
           submitBtn.innerHTML = originalText;
           submitBtn.disabled = false;
@@ -906,6 +969,206 @@
           parallax.style.transform = `translateY(${scrollTop * 0.5}px)`;
         }
       });
+
+      // Rate limiting variables
+      let lastSubmissionTime = 0;
+      const RATE_LIMIT_DELAY = 5000; // 1 minute in milliseconds
+
+      // Modal functions
+      function showModal() {
+        const modal = document.getElementById("messageModal");
+        const content = document.getElementById("modalContent");
+
+        modal.classList.remove("hidden");
+        setTimeout(() => {
+          content.classList.remove("scale-95", "opacity-0");
+          content.classList.add("scale-100", "opacity-100");
+        }, 10);
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("messageModal");
+        const content = document.getElementById("modalContent");
+
+        content.classList.remove("scale-100", "opacity-100");
+        content.classList.add("scale-95", "opacity-0");
+
+        setTimeout(() => {
+          modal.classList.add("hidden");
+        }, 300);
+      }
+
+      function showErrorModal(message) {
+        const modal = document.getElementById("errorModal");
+        const content = document.getElementById("errorModalContent");
+        const errorMessage = document.getElementById("errorMessage");
+
+        errorMessage.textContent = message;
+        modal.classList.remove("hidden");
+        setTimeout(() => {
+          content.classList.remove("scale-95", "opacity-0");
+          content.classList.add("scale-100", "opacity-100");
+        }, 10);
+      }
+
+      function closeErrorModal() {
+        const modal = document.getElementById("errorModal");
+        const content = document.getElementById("errorModalContent");
+
+        content.classList.remove("scale-100", "opacity-100");
+        content.classList.add("scale-95", "opacity-0");
+
+        setTimeout(() => {
+          modal.classList.add("hidden");
+        }, 300);
+      }
+
+      function showRateLimitModal() {
+        const modal = document.getElementById("rateLimitModal");
+        const content = document.getElementById("rateLimitModalContent");
+
+        modal.classList.remove("hidden");
+        setTimeout(() => {
+          content.classList.remove("scale-95", "opacity-0");
+          content.classList.add("scale-100", "opacity-100");
+        }, 10);
+      }
+
+      function closeRateLimitModal() {
+        const modal = document.getElementById("rateLimitModal");
+        const content = document.getElementById("rateLimitModalContent");
+
+        content.classList.remove("scale-100", "opacity-100");
+        content.classList.add("scale-95", "opacity-0");
+
+        setTimeout(() => {
+          modal.classList.add("hidden");
+        }, 300);
+      }
+
+      // Enhanced email validation function
+      function isValidEmail(email) {
+        // More comprehensive email regex
+        const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+        return emailRegex.test(email);
+      }
+
+      // Form submission handler
+      document.querySelector("form").addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        // Check rate limiting
+        const currentTime = Date.now();
+        if (currentTime - lastSubmissionTime < RATE_LIMIT_DELAY) {
+          showRateLimitModal();
+          return;
+        }
+
+        // Get form data
+        const formData = new FormData(this);
+        const name = formData.get("name").trim();
+        const email = formData.get("email").trim();
+        const subject = formData.get("subject").trim();
+        const message = formData.get("message").trim();
+
+        // Validation
+        if (!name || name.length < 2) {
+          showErrorModal("Please enter a valid name (at least 2 characters).");
+          return;
+        }
+
+        if (!email) {
+          showErrorModal("Please enter an email address.");
+          return;
+        }
+
+        if (!isValidEmail(email)) {
+          showErrorModal("Please enter a valid email address (e.g., example@domain.com).");
+          return;
+        }
+
+        if (!subject || subject.length < 3) {
+          showErrorModal("Please enter a subject (at least 3 characters).");
+          return;
+        }
+
+        if (!message || message.length < 10) {
+          showErrorModal("Please enter a more detailed message (at least 10 characters).");
+          return;
+        }
+
+        // Update button state
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+        submitBtn.disabled = true;
+
+        try {
+          // Send email using EmailJS
+          const result = await emailjs.send(
+            "service_lsx3t0i", // Your EmailJS service ID
+            "template_f829im5", // Your EmailJS template ID
+            {
+              from_name: name,
+              from_email: email,
+              subject: subject,
+              message: message,
+              to_email: "pierreaves@email.com",
+            }
+          );
+
+          // Success
+          lastSubmissionTime = currentTime;
+          setTimeout(() => {
+            this.reset();
+            
+            // Select the submit button again in case it's lost
+            const btn = document.querySelector('form button[type="submit"]');
+            btn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i>Send Message';
+            btn.disabled = false;
+          }, 1000);
+          
+          
+          showModal();
+        } catch (error) {
+          console.error("Error sending message:", error);
+          showErrorModal("Failed to send message. Please try again or contact me directly at pierreaves@email.com");
+        } finally {
+          // Reset button
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }
+      });
+
+      // Close modals when clicking outside of them
+      document.addEventListener("click", function (e) {
+        if (e.target.id === "messageModal") {
+          closeModal();
+        }
+        if (e.target.id === "errorModal") {
+          closeErrorModal();
+        }
+        if (e.target.id === "rateLimitModal") {
+          closeRateLimitModal();
+        }
+      });
+
+      // Close modals with Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeModal();
+          closeErrorModal();
+          closeRateLimitModal();
+        }
+      });
+    </script>
+
+    <!-- EmailJS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+      // Initialize EmailJS with your public key
+      emailjs.init("h3KtbWg07kVFd0pk3");
     </script>
   </body>
 </html>
