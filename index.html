@@ -212,14 +212,67 @@
       padding-top: 1rem;
       padding-bottom: 1rem;
     }
+
+    /* Mobile navigation styles */
+    @media (max-width: 768px) {
+      /* Hide text on mobile, show only icons */
+      .nav-text {
+        display: none;
+      }
+
+      /* Adjust spacing for mobile icons */
+      .nav-link {
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease;
+      }
+
+      /* Mobile icon hover effects */
+      .nav-link:hover {
+        background-color: rgba(6, 182, 212, 0.1);
+        transform: translateY(-2px);
+      }
+
+      /* Adjust navigation container for mobile */
+      #nav-links {
+        gap: 0.5rem;
+      }
+
+      /* Mobile icon sizing */
+      .nav-icon {
+        font-size: 1.1rem;
+        min-width: auto;
+      }
+
+      /* Remove the hamburger menu button since we're showing icons */
+      .mobile-menu-btn {
+        display: none;
+      }
+
+      /* Ensure navigation is always visible on mobile */
+      .hidden.md\\:flex {
+        display: flex !important;
+      }
+    }
+
+    /* Tablet adjustments */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .nav-text {
+        font-size: 0.875rem;
+      }
+
+      #nav-links {
+        gap: 1.5rem;
+      }
+    }
   </style>
   <body class="bg-slate-900 text-white">
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-slate-900/95 backdrop-blur-sm z-50 border-b border-slate-800" id="navbar">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center py-4 nav-container">
-          <div class="text-xl font-bold text-cyan-400">PA</div>
-          <div class="hidden md:flex space-x-8" id="nav-links">
+          <div class="text-xl font-bold text-cyan-400 me-7">PA</div>
+          <div class="flex space-x-8 md:space-x-8" id="nav-links">
             <a href="#home" class="nav-link hover:text-cyan-400 flex items-center space-x-2">
               <i class="fas fa-home nav-icon"></i>
               <span class="nav-text">Home</span>
@@ -241,9 +294,6 @@
               <span class="nav-text">Contact</span>
             </a>
           </div>
-          <button class="md:hidden text-cyan-400">
-            <i class="fas fa-bars text-xl"></i>
-          </button>
         </div>
       </div>
     </nav>
@@ -343,7 +393,7 @@
             <div class="relative">
               <div class="w-80 h-80 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 p-1 glow-effect">
                 <div class="w-full h-full rounded-2xl bg-slate-800 flex items-center justify-center">
-                  <img src="/public/my-picture.png" alt="Pierre Avestruz" class="w-72 h-72 rounded-xl object-cover" />
+                  <img src="/public/img/my-picture.png" alt="Pierre Avestruz" class="w-72 h-72 rounded-xl object-cover" />
                 </div>
               </div>
               <div class="absolute -bottom-4 -right-4 bg-cyan-500 text-white p-4 rounded-lg shadow-lg">
@@ -458,100 +508,102 @@
 
     <!-- Projects Section -->
     <section id="projects" class="py-20 bg-slate-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-7 lg:px-8">
         <h2 class="text-4xl font-bold text-center mb-16">Featured <span class="text-cyan-400">Projects</span></h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           <!-- Project 1 -->
-          <div class="bg-slate-900 rounded-lg overflow-hidden card-hover border border-slate-700">
-            <div class="project-image h-48 flex items-center justify-center">
-              <div class="text-center">
-                <i class="fas fa-shopping-cart text-4xl text-cyan-400 mb-4"></i>
-                <h4 class="text-lg font-semibold text-cyan-400">E-Commerce Platform</h4>
+          <div
+            class="project bg-slate-900 rounded-lg card-hover border border-slate-700 transform transition-all duration-500 ease-out hover:scale-110 hover:shadow-2xl hover:shadow-cyan-500/20 hover:border-cyan-500/50 will-change-transform group"
+          >
+            <div class="project-image h-48 flex items-center justify-center overflow-hidden rounded-t-lg">
+              <div class="text-center transform transition-all duration-500 group-hover:scale-105">
+                <img src="/public/img/lbelib.png" alt="LBELIB Project" class="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110" />
               </div>
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-3">LIB SLIB</h3>
+              <h3 class="text-xl font-bold mb-3">LBELIB</h3>
               <p class="text-gray-300 mb-4">
-                A modern e-commerce platform built with React and Node.js, featuring user authentication, shopping cart functionality, and payment integration.
+                An E-library web application for the school Lawang Bato National Highschool, proposed for our capstone project. It features a user-friendly interface for
+                students and teachers to access library resources, manage book loans, and search for materials.
               </p>
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-sm">React</span>
-                <span class="bg-green-500/20 text-green-400 px-2 py-1 rounded text-sm">Node.js</span>
-                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded text-sm">MongoDB</span>
+                <span class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-sm">HTML/CSS</span>
+                <span class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded text-sm">JavaScript</span>
+                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded text-sm">Bootstrap</span>
+                <span class="bg-green-600/20 text-green-500 px-2 py-1 rounded text-sm">Django</span>
+                <span class="bg-green-400/20 text-green-300 px-2 py-1 rounded text-sm">Node.js</span>
               </div>
               <div class="flex space-x-4">
-                <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors"> <i class="fas fa-external-link-alt mr-1"></i>Live Demo </a>
-                <a href="#" class="text-gray-400 hover:text-gray-300 transition-colors"> <i class="fab fa-github mr-1"></i>GitHub </a>
+                <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors"> <i class="fas fa-external-link-alt mr-1"></i>More Info </a>
               </div>
             </div>
           </div>
 
           <!-- Project 2 -->
-          <div class="bg-slate-900 rounded-lg overflow-hidden card-hover border border-slate-700">
-            <div class="project-image h-48 flex items-center justify-center">
-              <div class="text-center">
-                <i class="fas fa-coffee text-4xl text-cyan-400 mb-4"></i>
-                <h4 class="text-lg font-semibold text-cyan-400">Coffee Shop Website</h4>
+          <div
+            class="project bg-slate-900 rounded-lg overflow-hidden card-hover border border-slate-700 transform transition-all duration-500 ease-out hover:scale-110 hover:shadow-2xl hover:shadow-cyan-500/20 hover:border-cyan-500/50 will-change-transform group"
+          >
+            <div class="project-image h-48 flex items-center justify-center overflow-hidden">
+              <div class="text-center transform transition-all duration-500 group-hover:scale-105">
+                <img src="/public/img/coffee-shop.png" alt="Coffee Life" class="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110" />
               </div>
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-3">Coffee Shop</h3>
-              <p class="text-gray-300 mb-4">A responsive coffee shop website with online ordering system, location finder, and loyalty program integration.</p>
+              <h3 class="text-xl font-bold mb-3">Coffee Life</h3>
+              <p class="text-gray-300 mb-4">
+                Coffee life was a mini project conducted in school to practice basic coding skills and to apply help practice to have clean and responsive coding
+              </p>
               <div class="flex flex-wrap gap-2 mb-4">
                 <span class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-sm">HTML/CSS</span>
                 <span class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded text-sm">JavaScript</span>
-                <span class="bg-cyan-500/20 text-cyan-400 px-2 py-1 rounded text-sm">Tailwind</span>
               </div>
               <div class="flex space-x-4">
-                <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors"> <i class="fas fa-external-link-alt mr-1"></i>Live Demo </a>
-                <a href="#" class="text-gray-400 hover:text-gray-300 transition-colors"> <i class="fab fa-github mr-1"></i>GitHub </a>
+                <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors"> <i class="fas fa-external-link-alt mr-1"></i>More Info </a>
               </div>
             </div>
           </div>
 
           <!-- Project 3 -->
-          <div class="bg-slate-900 rounded-lg overflow-hidden card-hover border border-slate-700">
-            <div class="project-image h-48 flex items-center justify-center">
-              <div class="text-center">
-                <i class="fas fa-users text-4xl text-cyan-400 mb-4"></i>
-                <h4 class="text-lg font-semibold text-cyan-400">Social Platform</h4>
+          <div
+            class="project bg-slate-900 rounded-lg overflow-hidden card-hover border border-slate-700 transform transition-all duration-500 ease-out hover:scale-110 hover:shadow-2xl hover:shadow-cyan-500/20 hover:border-cyan-500/50 will-change-transform group"
+          >
+            <div class="project-image h-48 flex items-center justify-center overflow-hidden">
+              <div class="text-center transform transition-all duration-500 group-hover:scale-105">
+                <img src="/public/img/killing-intent.png" alt="Killing Intent" class="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110" />
               </div>
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-3">Cycling Journal</h3>
-              <p class="text-gray-300 mb-4">A social platform for cycling enthusiasts to track routes, share experiences, and connect with fellow cyclists.</p>
+              <h3 class="text-xl font-bold mb-3">Killing Intent</h3>
+              <p class="text-gray-300 mb-4">A Card game where in you play as a detective, investigator or a witness, an idea created by, organized, and managed by me with my team.</p>
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-sm">React</span>
-                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded text-sm">Firebase</span>
-                <span class="bg-green-500/20 text-green-400 px-2 py-1 rounded text-sm">Maps API</span>
+                <span class="bg-indigo-500/20 text-blue-400 px-2 py-1 rounded text-sm">Canva</span>
+                <span class="bg-zinc-500/20 text-zinc-300 px-2 py-1 rounded text-sm">Unity</span>
               </div>
               <div class="flex space-x-4">
-                <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors"> <i class="fas fa-external-link-alt mr-1"></i>Live Demo </a>
-                <a href="#" class="text-gray-400 hover:text-gray-300 transition-colors"> <i class="fab fa-github mr-1"></i>GitHub </a>
+                <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors"> <i class="fas fa-external-link-alt mr-1"></i>More Info</a>
               </div>
             </div>
           </div>
 
           <!-- Project 4 -->
-          <div class="bg-slate-900 rounded-lg overflow-hidden card-hover border border-slate-700">
-            <div class="project-image h-48 flex items-center justify-center">
-              <div class="text-center">
-                <i class="fas fa-chess text-4xl text-cyan-400 mb-4"></i>
-                <h4 class="text-lg font-semibold text-cyan-400">Game Platform</h4>
+          <div
+            class="project bg-slate-900 rounded-lg overflow-hidden card-hover border border-slate-700 transform transition-all duration-500 ease-out hover:scale-110 hover:shadow-2xl hover:shadow-cyan-500/20 hover:border-cyan-500/50 will-change-transform group"
+          >
+            <div class="project-image h-48 flex items-center justify-center overflow-hidden">
+              <div class="text-center transform transition-all duration-500 group-hover:scale-105">
+                <img src="/public/img/arboresque.png" alt="Arboresque" class="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110" />
               </div>
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-3">Arkanesque</h3>
-              <p class="text-gray-300 mb-4">A browser-based gaming platform featuring classic arcade games with modern UI and real-time multiplayer functionality.</p>
+              <h3 class="text-xl font-bold mb-3">Arboresque</h3>
+              <p class="text-gray-300 mb-4">A Novel game inspired by the famous "Dungeons and Dragons" designed with canva and created with unity with my teammates, story written by myself. </p>
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded text-sm">Vue.js</span>
-                <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-sm">Socket.io</span>
-                <span class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-sm">Canvas</span>
+                <span class="bg-indigo-500/20 text-blue-400 px-2 py-1 rounded text-sm">Canva</span>
+                <span class="bg-zinc-500/20 text-zinc-300 px-2 py-1 rounded text-sm">Unity</span>
               </div>
               <div class="flex space-x-4">
-                <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors"> <i class="fas fa-external-link-alt mr-1"></i>Live Demo </a>
-                <a href="#" class="text-gray-400 hover:text-gray-300 transition-colors"> <i class="fab fa-github mr-1"></i>GitHub </a>
+                <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors"> <i class="fas fa-external-link-alt mr-1"></i>More Info</a>
               </div>
             </div>
           </div>
