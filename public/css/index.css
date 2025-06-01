@@ -1,115 +1,254 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+* {
   font-family: "Inter", sans-serif;
-  scroll-behavior: smooth;
 }
-main {
-  background: repeating-radial-gradient(circle at 20% 20%, rgba(219 214 233 / 0.15), rgba(219 214 233 / 0.15) 10px, transparent 10px, transparent 20px),
-    repeating-radial-gradient(circle at 80% 80%, rgba(203 213 232 / 0.15), rgba(203 213 232 / 0.15) 12px, transparent 12px, transparent 24px),
-    linear-gradient(135deg, #e9d5ff 0%, #f3e8ff 100%);
-  background-blend-mode: overlay, overlay, normal;
+
+.gradient-bg {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
 }
-@keyframes fadeIn {
+
+.geometric-bg {
+  background-image: linear-gradient(30deg, transparent 12%, rgba(6, 182, 212, 0.05) 12%, rgba(6, 182, 212, 0.05) 50%, transparent 50%),
+    linear-gradient(-30deg, transparent 12%, rgba(6, 182, 212, 0.05) 12%, rgba(6, 182, 212, 0.05) 50%, transparent 50%);
+  background-size: 60px 60px;
+}
+
+.glow-effect {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+  transition: all 0.3s ease;
+}
+
+.glow-effect:hover {
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+  transform: translateY(-2px);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.skill-bar {
+  background: linear-gradient(90deg, #06b6d4, #0891b2);
+  animation: skillLoad 2s ease-in-out;
+}
+
+@keyframes skillLoad {
+  from {
+    width: 0;
+  }
+}
+
+.typing-animation {
+  overflow: hidden;
+  border-right: 3px solid #06b6d4;
+  white-space: nowrap;
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #06b6d4;
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-.animate-fadeIn {
-  animation: fadeIn 1.2s ease forwards;
-}
-/* Custom styles for experience table dropdown */
-.exp-table {
-  border-collapse: separate;
-  border-spacing: 0 1rem;
-  width: 100%;
-}
-.exp-table thead tr {
-  background: transparent;
-}
-.exp-table thead th {
-  text-align: left;
-  padding: 0.75rem 1.5rem;
-  font-weight: 700;
-  color: #db2777; /* pink-600 */
-  font-size: 1.125rem;
-  user-select: none;
-}
-.exp-table tbody tr {
-  background: rgba(219, 114, 118, 0.15); /* pink-400 pastel */
-  border-radius: 1rem;
-  box-shadow: 0 4px 8px rgba(219, 114, 118, 0.2);
-  cursor: pointer;
-  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+
+.project-image {
+  background: linear-gradient(45deg, #1e293b, #334155);
   position: relative;
-}
-.exp-table tbody tr:hover {
-  background: rgba(219, 114, 118, 0.3);
-  box-shadow: 0 8px 16px rgba(219, 114, 118, 0.35);
-  z-index: 10;
-}
-.exp-table tbody tr td {
-  padding: 1rem 1.5rem;
-  vertical-align: middle;
-  color: #831843; /* pink-900 */
-  font-weight: 600;
-  font-size: 1rem;
-  user-select: none;
-}
-.exp-table tbody tr .exp-details {
-  max-height: 0;
   overflow: hidden;
-  color: #6b21a8; /* purple-800 */
-  font-weight: 400;
-  font-size: 0.95rem;
-  line-height: 1.4;
-  padding: 0 1.5rem;
-  transition: max-height 0.4s ease, padding 0.4s ease;
-  user-select: text;
 }
-.exp-table tbody tr.expanded .exp-details {
-  max-height: 500px;
-  padding: 0.75rem 1.5rem 1rem 1.5rem;
+
+.project-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
 }
-/* Arrow icon rotation */
-.exp-table tbody tr .arrow-icon {
-  transition: transform 0.3s ease;
-  color: #db2777;
+
+.project-image:hover::before {
+  left: 100%;
 }
-.exp-table tbody tr.expanded .arrow-icon {
-  transform: rotate(180deg);
+
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
 }
-/* Responsive adjustments */
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background-color: #06b6d4;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* header */
+/* Replace the existing header CSS section with this updated version */
+
+/* Navigation smooth transitions */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background-color: #06b6d4;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Navigation text animation with smoother transitions */
+.nav-text {
+  opacity: 1;
+  max-width: 100px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.nav-scrolled .nav-text {
+  opacity: 0;
+  max-width: 0;
+}
+
+/* Smooth hover effect on entire navbar when scrolled */
+.nav-scrolled:hover .nav-text {
+  opacity: 1;
+  max-width: 100px;
+}
+
+/* Icon styling with smooth transitions */
+.nav-icon {
+  min-width: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Navbar smooth height transitions */
+#navbar {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Navbar container with smooth padding transitions */
+.nav-container {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-scrolled .nav-container {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Hover effect to restore original height when scrolled */
+.nav-scrolled:hover .nav-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Mobile navigation styles */
 @media (max-width: 768px) {
-  .exp-table thead {
+  /* Hide text on mobile, show only icons */
+  .nav-text {
     display: none;
   }
-  .exp-table tbody tr {
-    display: block;
-    margin-bottom: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 8px rgba(219, 114, 118, 0.15);
+
+  /* Adjust spacing for mobile icons */
+  .nav-link {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
   }
-  .exp-table tbody tr td {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-    font-weight: 700;
+
+  /* Adjust navigation container for mobile */
+  #nav-links {
+    gap: 0.5rem;
+  }
+
+  /* Mobile icon sizing */
+  .nav-icon {
     font-size: 1.1rem;
-    color: #db2777;
-    border-bottom: 1px solid rgba(219, 114, 118, 0.3);
+    min-width: auto;
   }
-  .exp-table tbody tr .exp-details {
-    padding: 0 1.5rem 1rem 1.5rem;
-    font-weight: 400;
-    font-size: 1rem;
-    color: #6b21a8;
+
+  /* Remove the hamburger menu button since we're showing icons */
+  .mobile-menu-btn {
+    display: none;
   }
-  .exp-table tbody tr .arrow-icon {
-    margin-left: 0.5rem;
-    align-self: center;
+
+  /* Ensure navigation is always visible on mobile */
+  .hidden.md\\:flex {
+    display: flex !important;
   }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav-text {
+    font-size: 0.875rem;
+  }
+
+  #nav-links {
+    gap: 1.5rem;
+  }
+}
+
+label:hover,
+label:active {
+  color: #06b6d4;
 }

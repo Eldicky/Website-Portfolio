@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+/* Navigation smooth transitions */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background-color: #06b6d4;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Navigation text animation with smoother transitions */
+.nav-text {
+  opacity: 1;
+  max-width: 100px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.nav-scrolled .nav-text {
+  opacity: 0;
+  max-width: 0;
+}
+
+/* Smooth hover effect on entire navbar when scrolled */
+.nav-scrolled:hover .nav-text {
+  opacity: 1;
+  max-width: 100px;
+}
+
+/* Icon styling with smooth transitions */
+.nav-icon {
+  min-width: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Navbar smooth height transitions */
+#navbar {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Navbar container with smooth padding transitions */
+.nav-container {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-scrolled .nav-container {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Hover effect to restore original height when scrolled */
+.nav-scrolled:hover .nav-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Mobile navigation styles */
+@media (max-width: 768px) {
+  /* Hide text on mobile, show only icons */
+  .nav-text {
+    display: none;
+  }
+
+  /* Adjust spacing for mobile icons */
+  .nav-link {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  /* Mobile icon hover effects */
+  .nav-link:hover {
+    background-color: rgba(6, 182, 212, 0.1);
+    transform: translateY(-2px);
+  }
+
+  /* Adjust navigation container for mobile */
+  #nav-links {
+    gap: 0.5rem;
+  }
+
+  /* Mobile icon sizing */
+  .nav-icon {
+    font-size: 1.1rem;
+    min-width: auto;
+  }
+
+  /* Remove the hamburger menu button since we're showing icons */
+  .mobile-menu-btn {
+    display: none;
+  }
+
+  /* Ensure navigation is always visible on mobile */
+  .hidden.md\\:flex {
+    display: flex !important;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav-text {
+    font-size: 0.875rem;
+  }
+
+  #nav-links {
+    gap: 1.5rem;
+  }
+}
+
+.modal-overlay {
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.carousel-dot.active {
+  background-color: #06b6d4; /* cyan color */
+}
