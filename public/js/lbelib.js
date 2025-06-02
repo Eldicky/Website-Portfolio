@@ -35,103 +35,197 @@ window.addEventListener("scroll", function () {
 
 // Modal data for each gallery item
 const modalData = {
-  mainMenu: {
-    title: "Main Menu Interface",
-    images: [
+  student: {
+    folder: "student",
+    title: "Student Side User Interface",
+    contents: [
       {
-        title: "Navigation Overview",
-        description: "Clean and intuitive main navigation with quick access to all features",
-        placeholder: "Main navigation interface with sidebar menu, search bar, and user profile section",
+        title: "Login Page",
+        img: "login-page",
       },
       {
-        title: "Menu Categories",
-        description: "Organized menu categories for easy navigation between different sections",
-        placeholder: "Categorized menu items including Tasks, Projects, Teams, and Analytics",
+        title: "Request Account",
+        img: "login-request-account",
       },
       {
-        title: "User Dashboard",
-        description: "Personalized dashboard showing recent activities and quick actions",
-        placeholder: "User dashboard with recent tasks, notifications, and quick action buttons",
+        title: "Forgot Password",
+        img: "login-forget-password",
+      },
+      {
+        title: "Home Page",
+        img: "home-page",
+      },
+      {
+        title: "Notification",
+        img: "website-notification",
+      },
+      {
+        title: "Sidebar Expanded",
+        img: "sidebar-expanded",
+      },
+      {
+        title: "Top Viewed Books",
+        img: "home-page-2",
+      },
+      {
+        title: "Book Details",
+        img: "book-detail",
+      },
+      {
+        title: "Book Borrow Request",
+        img: "book-borrow-request",
+      },
+      {
+        title: "Borrow Already Requested",
+        img: "book-borrow-already-requested",
+      },
+      {
+        title: "Book Preview",
+        img: "book-preview",
+      },
+      {
+        title: "Bookmark Book",
+        img: "bookmark-book",
+      },
+      {
+        title: "Remove Bookmark",
+        img: "remove-bookmark",
+      },
+      {
+        title: "Bookmark Page",
+        img: "bookmark-page",
+      },
+      {
+        title: "Change Password",
+        img: "change-password",
+      },
+      {
+        title: "Borrowed Books Page",
+        img: "borrowed-books-page",
+      },
+      {
+        title: "Request History - Pending",
+        img: "request-history-pending",
+      },
+      {
+        title: "Request History - Approved",
+        img: "request-history-approved",
+      },
+      {
+        title: "Request History - Declined",
+        img: "request-history-declined",
+      },
+      {
+        title: "Logout Page",
+        img: "logout",
       },
     ],
   },
-  dashboard: {
+  librarian: {
+    folder: "librarian",
     title: "Analytics Dashboard",
-    images: [
+    contents: [
       {
-        title: "Performance Overview",
-        description: "Comprehensive analytics showing productivity metrics and trends",
-        placeholder: "Charts and graphs displaying task completion rates, team performance, and project progress",
+        title: "Home Page",
+        img: "home-page",
       },
       {
-        title: "Real-time Statistics",
-        description: "Live data visualization with interactive charts and reports",
-        placeholder: "Real-time dashboard with live updating charts, KPI cards, and progress indicators",
+        title: "Upload Page",
+        img: "upload-page",
       },
       {
-        title: "Custom Reports",
-        description: "Generate custom reports based on specific timeframes and criteria",
-        placeholder: "Report generation interface with filters, date ranges, and export options",
+        title: "Books Page",
+        img: "books-page",
+      },
+      {
+        title: "Book Preview",
+        img: "books-preview",
+      },
+      {
+        title: "Edit Book",
+        img: "edit-book",
+      },
+      {
+        title: "Archive Book",
+        img: "archive-book",
+      },
+      {
+        title: "Books to be Returned",
+        img: "book-status-books-to-be-returned",
+      },
+      {
+        title: "Book Returned",
+        img: "books-to-be-returned-book-returned",
+      },
+      {
+        title: "Return Book Reminder",
+        img: "books-to-be-returned-remind",
+      },
+      {
+        title: "Book Logs",
+        img: "book-status-logs",
+      },
+      {
+        title: "Borrow Requests Page",
+        img: "borrow-request-pending-requests",
+      },
+      {
+        title: "Approve Borrow Request",
+        img: "pending-request-approve-request",
+      },
+      {
+        title: "Decline Borrow Request",
+        img: "pending-request-decline-request",
+      },
+      {
+        title: "Approved Borrow Requests",
+        img: "borrow-request-approved-requests",
+      },
+      {
+        title: "Declined Borrow Request",
+        img: "borrow-request-declined-requests",
+      },
+      {
+        title: "Archived Books Page",
+        img: "archived-books-page",
+      },
+      {
+        title: "Restore Archived Book",
+        img: "archived-books-restore",
       },
     ],
   },
-  taskBoard: {
+  admin: {
+    folder: "admin",
     title: "Task Management Board",
-    images: [
+    contents: [
       {
-        title: "Kanban Board View",
-        description: "Intuitive drag-and-drop task management with customizable columns",
-        placeholder: "Kanban board with To Do, In Progress, Review, and Done columns with task cards",
+        title: "Overview",
+        img: "overview",
       },
       {
-        title: "Task Details",
-        description: "Detailed task information with attachments, comments, and due dates",
-        placeholder: "Task detail modal showing description, assignees, due dates, and file attachments",
+        title: "Activity Logs",
+        img: "activity-logs",
       },
       {
-        title: "Team Collaboration",
-        description: "Real-time collaboration features with team member interactions",
-        placeholder: "Task board showing team member avatars, real-time updates, and collaboration indicators",
-      },
-    ],
-  },
-  teamChat: {
-    title: "Team Communication Hub",
-    images: [
-      {
-        title: "Chat Interface",
-        description: "Modern messaging interface with channels and direct messages",
-        placeholder: "Chat interface with channel list, message threads, and emoji reactions",
+        title: "User List",
+        img: "user-list",
       },
       {
-        title: "File Sharing",
-        description: "Seamless file sharing and collaboration within chat conversations",
-        placeholder: "Chat with file uploads, image previews, and document sharing capabilities",
+        title: "Disable User",
+        img: "user-list-disable-account",
       },
       {
-        title: "Video Integration",
-        description: "Integrated video calls and screen sharing for remote collaboration",
-        placeholder: "Video call interface embedded within the chat application",
-      },
-    ],
-  },
-  settings: {
-    title: "Configuration Panel",
-    images: [
-      {
-        title: "User Preferences",
-        description: "Personalized settings for notifications, themes, and user preferences",
-        placeholder: "Settings panel with theme selection, notification preferences, and account settings",
+        title: "Create Account",
+        img: "create-account",
       },
       {
-        title: "Team Management",
-        description: "Administrative controls for team management and permissions",
-        placeholder: "Team management interface with user roles, permissions, and access controls",
+        title: "Import Multiple Users from CSV",
+        img: "import-multiple-accounts-using-csv",
       },
       {
-        title: "Integration Settings",
-        description: "Third-party integrations and API configurations",
-        placeholder: "Integration settings showing connected apps, API keys, and webhook configurations",
+        title: "Book Batch Upload",
+        img: "book-batch-upload",
       },
     ],
   },
@@ -143,30 +237,23 @@ function openModal(cardType) {
   const modalContent = document.getElementById("modalContent");
 
   const data = modalData[cardType];
+  const imgPath = `/public/img/lbelib/${data.folder}/`;
   modalTitle.textContent = data.title;
 
   // Generate modal content
-  let contentHTML = '<div class="grid gap-8">';
+  let contentHTML = '<div class="grid gap-3 sm:gap-10">';
 
-  data.images.forEach((image, index) => {
+  data.contents.forEach((content) => {
     contentHTML += `
             <div class="bg-darker-blue rounded-xl p-6 border border-gray-700">
-                <div class="grid lg:grid-cols-2 gap-6 items-center">
-                    <div class="bg-gradient-to-br from-cyan/10 to-light-cyan/5 rounded-lg p-8 border border-gray-600 min-h-[250px] flex items-center justify-center">
-                        <div class="text-center text-gray-400">
-                            <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                            <p class="text-sm">${image.placeholder}</p>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold text-white mb-3">${image.title}</h4>
-                        <p class="text-gray-300 leading-relaxed mb-4">${image.description}</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-cyan/20 text-cyan px-3 py-1 rounded-full text-sm">Feature ${index + 1}</span>
-                            <span class="bg-green-400/20 text-green-400 px-3 py-1 rounded-full text-sm">Interactive</span>
-                        </div>
+                <div class="items-center">
+                    <div class="bg-gradient-to-br from-cyan/10 to-light-cyan/5 rounded-lg p-3 pt-0 pb-0 sm:p-5 border border-gray-600 min-h-[250px] flex flex-col items-center justify-center">
+                      <div class="text-center">
+                        <h1 class="text-base md:text-2xl font-bold text-gray-200 mb-4">${content.title}</h1>
+                      </div>
+                      <div>
+                          <img src="${imgPath}/${content.img}.png" alt="${content.img}" class="mb-4 rounded-lg shadow-lg">
+                      </div>
                     </div>
                 </div>
             </div>
