@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LBELIB | Pierre Avestruz Potfolio</title>
+    <title>Case Record | Pierre Avestruz Potfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <link rel="icon" type="image" href="/public/img/personal-logo-portfolio.png" />
     <link rel="stylesheet" href="/public/css/project-preview.css" />
+    <link rel="stylesheet" href="/public/css/modal-zoom.css" />
   </head>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -57,14 +58,14 @@
           <div class="p-5 lg:p-12 lg:pb-2">
             <!-- Project Title -->
             <div class="mb-6">
-              <h1 class="text-4xl lg:text-5xl font-bold mb-5 text-center">Lawang Bato National Highschool <span class="text-cyan">E-Library</span></h1>
-              <p class="text-xl text-gray-300 mb-2 text-center">Online Library and Research Repository</p>
+              <h1 class="text-4xl lg:text-5xl font-bold mb-5 text-center">Case Records <span class="text-cyan">Repository</span></h1>
+              <p class="text-xl text-gray-300 mb-2 text-center">A Criminal Case Records Repository</p>
               <div class="flex flex-wrap gap-2 mb-5 justify-center">
                 <span class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-sm">HTML/CSS</span>
                 <span class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded text-sm">JavaScript</span>
-                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded text-sm">Bootstrap</span>
-                <span class="bg-green-600/20 text-green-500 px-2 py-1 rounded text-sm">Django</span>
-                <span class="bg-green-400/20 text-green-300 px-2 py-1 rounded text-sm">SQL</span>
+                <span class="bg-green-600/20 text-green-500 px-2 py-1 rounded text-sm">NodeJS</span>
+                <span class="bg-amber-400/20 text-amber-300 px-2 py-1 rounded text-sm">MariaDB</span>
+                <span class="bg-sky-500/20 text-sky-400 px-2 py-1 rounded text-sm">React</span>
               </div>
             </div>
 
@@ -76,14 +77,13 @@
               </div>
               <div>
                 <p class="text-gray-400 text-sm uppercase tracking-wide mb-1 text-center">Platform</p>
-                <p class="text-white font-medium text-center">Web & Mobile</p>
+                <p class="text-white font-medium text-center">Web</p>
               </div>
               <!-- Description -->
               <div class="mb-8 col-span-2">
-                <p class="text-gray-300 leading-relaxed text-justified mx-0 md:mx-10" >
-                  A concept proposed in fulfillment of our thesis, LBELIB is a web-based library system designed to modernize the traditional library experience. It provides
-                  a platform for students and teachers to access books, research materials, and other resources online, making it easier to find and borrow materials without
-                  the need for physical visits to the library.
+                <p class="text-gray-300 leading-relaxed text-justified mx-0 md:mx-10">
+                  A localized system proposed as an OJT intern for the Office of the City Prosecutor (Valenzuela City) to help them manage and organize their case records. The
+                  system allows users to search, view, and manage case records efficiently, providing a user-friendly interface for both prosecutors and administrative staff.
                 </p>
               </div>
 
@@ -116,13 +116,13 @@
                   <div class="carousel-container h-[500px] relative">
                     <!-- Carousel slides -->
                     <div class="carousel-slide active">
-                      <img src="/public/img/lbelib/student/home-page.png" alt="Website Page 1" class="w-full h-full object-cover" />
+                      <img src="/public/img/ojt/ojt-login.png" alt="Website Page 1" class="w-full h-full object-cover" />
                     </div>
                     <div class="carousel-slide">
-                      <img src="/public/img/lbelib/student/book-detail.png" alt="Website Page 2" class="w-full h-full object-cover" />
+                      <img src="/public/img/ojt/ojt-dashboard.png" alt="Website Page 2" class="w-full h-full object-cover" />
                     </div>
                     <div class="carousel-slide">
-                      <img src="/public/img/lbelib/student/book-preview.png" alt="Website Page 3" class="w-full h-full object-cover" />
+                      <img src="/public/img/ojt/ojt-edit-case.png" alt="Website Page 3" class="w-full h-full object-cover" />
                     </div>
 
                     <!-- Carousel Navigation -->
@@ -151,68 +151,74 @@
         </div>
 
         <!-- Project Gallery Section -->
-        <div class="mt-12">
-          <h2 class="text-2xl font-bold mb-6 text-center">Project <span class="text-cyan">Gallery</span></h2>
+        <div class="mt-12 min-h-screen">
+          <h2 class="text-3xl font-bold mb-8 text-center fade-in-up-delay-1">Project <span class="text-cyan">Gallery</span></h2>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 fade-in-up">
-            <!-- Gallery Item 1 - Main Menu -->
-            <div
-              class="bg-dark-blue rounded-xl p-4 border border-gray-700 hover:border-cyan transition-all duration-300 hover:transform hover:scale-105 cursor-pointer fade-in-up-delay-1"
-              onclick="openModal('lbelibStudent')"
-            >
-              <div class="bg-gradient-to-br from-cyan/20 to-light-cyan/10 rounded-lg h-32 flex items-center justify-center mb-3">
-                <i class="fa-solid fa-graduation-cap text-[40px]"></i>
+          <div class="flex flex-col gap-8 max-w-6xl mx-auto px-4">
+            <!-- Gallery Item 1 -->
+            <div class="bg-dark-blue rounded-xl p-6 border border-gray-700 hover:border-cyan transition-all duration-300 fade-in-up">
+              <h3 class="text-2xl font-semibold text-white mb-4 text-center">Login Page</h3>
+              <div class="bg-gradient-to-br from-cyan/20 to-light-cyan/10 rounded-lg overflow-hidden">
+                <img
+                  src="/public/img/ojt/ojt-login.png"
+                  alt="Completed Orders Page"
+                  class="w-full h-80 lg:h-96 object-cover cursor-pointer hover:opacity-80 transition-opacity"
+                  onclick="openImageModal(this)"
+                />
               </div>
-              <h3 class="text-sm font-semibold text-white text-center">Student</h3>
-              <p class="text-xs text-gray-400 text-center">Student's User UI</p>
             </div>
 
-            <!-- Gallery Item 2 - Dashboard -->
-            <div
-              class="bg-dark-blue rounded-xl p-4 border border-gray-700 hover:border-cyan transition-all duration-300 hover:transform hover:scale-105 cursor-pointer fade-in-up-delay-2"
-              onclick="openModal('lbelibLibrarian')"
-            >
-              <div class="bg-gradient-to-br from-green-400/20 to-green-600/10 rounded-lg h-32 flex items-center justify-center mb-3">
-                <i class="fa-solid fa-book text-[40px]"></i>
+            <!-- Gallery Item 2 -->
+            <div class="bg-dark-blue rounded-xl p-6 border border-gray-700 hover:border-cyan transition-all duration-300 fade-in-up-delay-1">
+              <h3 class="text-2xl font-semibold text-white mb-4 text-center">Dashboard</h3>
+              <div class="bg-gradient-to-br from-green-400/20 to-green-600/10 rounded-lg overflow-hidden">
+                <img
+                  src="/public/img/ojt/ojt-dashboard.png"
+                  alt="Dispatch Page"
+                  class="w-full h-80 lg:h-96 object-cover cursor-pointer hover:opacity-80 transition-opacity"
+                  onclick="openImageModal(this)"
+                />
               </div>
-              <h3 class="text-sm font-semibold text-white text-center">Librarian</h3>
-              <p class="text-xs text-gray-400 text-center">Librarian's User UI</p>
             </div>
 
-            <!-- Gallery Item 3 - Task Board -->
-            <div
-              class="bg-dark-blue rounded-xl p-4 border border-gray-700 hover:border-cyan transition-all duration-300 hover:transform hover:scale-105 cursor-pointer fade-in-up-delay-3"
-              onclick="openModal('lbelibAdmin')"
-            >
-              <div class="bg-gradient-to-br from-purple-400/20 to-purple-600/10 rounded-lg h-32 flex items-center justify-center mb-3">
-                <i class="fa-solid fa-user-tie text-[40px]"></i>
+            <!-- Gallery Item 3 -->
+            <div class="bg-dark-blue rounded-xl p-6 border border-gray-700 hover:border-cyan transition-all duration-300 fade-in-up-delay-2">
+              <h3 class="text-2xl font-semibold text-white mb-4 text-center">Add Case</h3>
+              <div class="bg-gradient-to-br from-purple-400/20 to-purple-600/10 rounded-lg overflow-hidden">
+                <img
+                  src="/public/img/ojt/ojt-add-case.png"
+                  alt="Rider Page"
+                  class="w-full h-80 lg:h-96 object-cover cursor-pointer hover:opacity-80 transition-opacity"
+                  onclick="openImageModal(this)"
+                />
               </div>
-              <h3 class="text-sm font-semibold text-white mb-1 text-center">Admin</h3>
-              <p class="text-xs text-gray-400 text-center">Admin's User UI</p>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div class="bg-dark-blue rounded-xl p-6 border border-gray-700 hover:border-cyan transition-all duration-300 fade-in-up-delay-3">
+              <h3 class="text-2xl font-semibold text-white mb-4 text-center">Edit Case</h3>
+              <div class="bg-gradient-to-br from-purple-400/20 to-purple-600/10 rounded-lg overflow-hidden">
+                <img
+                  src="/public/img/ojt/ojt-edit-case.png"
+                  alt="Rider Page"
+                  class="w-full h-80 lg:h-96 object-cover cursor-pointer hover:opacity-80 transition-opacity"
+                  onclick="openImageModal(this)"
+                />
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- Image Modal -->
+        <div id="imageModal" class="image-modal" onclick="closeImageModal()">
+          <span class="close-modal" onclick="closeImageModal()">&times;</span>
+          <img id="modalImage" class="modal-content" alt="Enlarged view" />
+        </div>
       </div>
     </section>
-    <!-- Modal Overlay -->
-    <div id="galleryModal" class="fixed inset-0 bg-black bg-opacity-75 modal-overlay hidden z-50 flex items-center justify-center p-4">
-      <div class="bg-dark-blue rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto border border-gray-700 modal-content">
-        <!-- Modal Header -->
-        <div class="flex justify-between items-center p-6 border-b border-gray-700">
-          <h3 id="modalTitle" class="text-lg md:text-2xl font-bold text-white"></h3>
-          <button onclick="closeModal()" class="text-gray-400 hover:text-white transition-colors">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
 
-        <!-- Modal Content -->
-        <div id="modalContent" class="p-6">
-          <!-- Content will be dynamically loaded here -->
-        </div>
-      </div>
-    </div>
+    <!-- Modal Overlay -->
+    <div id="galleryModal"></div>
 
     <!-- Features Section (Compact Version) -->
     <section id="features" class="py-20 px-6 md:px-12 scroll-mt-15 bg-darker-blue">
@@ -221,22 +227,6 @@
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 fade-in-up-delay-3">
           <!-- Feature cards remain the same -->
-          <div
-            class="bg-dark-blue rounded-xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-gray-700 hover:border-cyan flex flex-col items-center sm:items-start"
-          >
-            <div class="bg-cyan bg-opacity-20 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 fill-cyan" stroke="currentColor" viewBox="0 0 384 512">
-                <path
-                  d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7c0 0 0 0 0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5L109 384c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8c0 0 0 0 0 0s0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4c0 0 0 0 0 0s0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5l-48.6 0c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8c0 0 0 0 0 0s0 0 0 0s0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80l0-16 160 0 0 16c0 44.2-35.8 80-80 80z"
-                />
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-4 justify-self-start">Innovative</h3>
-            <p class="text-gray-400 leading-relaxed text-center sm:text-start">
-              Helping the school library to be modernized and helping with excess storage of paper documents.
-            </p>
-          </div>
-
           <div
             class="bg-dark-blue rounded-xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-gray-700 hover:border-cyan flex flex-col items-center sm:items-start"
           >
@@ -265,31 +255,12 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                />
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-4">Smart Analytics</h3>
-            <p class="text-gray-400 leading-relaxed text-center sm:text-start">Comprehensive analytics dashboard with insights, performance metrics, and user interactions.</p>
-          </div>
-
-          <div
-            class="bg-dark-blue rounded-xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-gray-700 hover:border-cyan flex flex-col items-center sm:items-start"
-          >
-            <div class="bg-cyan bg-opacity-20 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-              <svg class="w-8 h-8 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
                   d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
                 />
               </svg>
             </div>
             <h3 class="text-xl font-semibold mb-4">Data Security</h3>
-            <p class="text-gray-400 leading-relaxed text-center sm:text-start">
-              All books are recorded and dated and researches have watermarks to prevent copyright, limited access, and only has limited time to view.
-            </p>
+            <p class="text-gray-400 leading-relaxed text-center sm:text-start">The website can only be accessed by admins and data custodians to ensure data privacy.</p>
           </div>
 
           <div
@@ -303,25 +274,6 @@
             <h3 class="text-xl font-semibold mb-4">Mobile Responsive</h3>
             <p class="text-gray-400 leading-relaxed text-center sm:text-start">
               Responsive design optimized for mobile devices with native app-like experience across all platforms.
-            </p>
-          </div>
-
-          <div
-            class="bg-dark-blue rounded-xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-gray-700 hover:border-cyan flex flex-col items-center sm:items-start"
-          >
-            <div class="bg-cyan bg-opacity-20 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-              <svg class="w-8 h-8 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                />
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-4">PWD Accesibility</h3>
-            <p class="text-gray-400 leading-relaxed text-center sm:text-start">
-              Programed to have voice recognition controls and implemented text to speech to be PWD friendly.
             </p>
           </div>
         </div>
@@ -351,6 +303,7 @@
         </div>
       </div>
     </footer>
-    <script type="module" src="/public/js/project-preview.js"></script>
+    <script src="/public/js/project-preview.js"></script>
+    <script src="/public/js/modal-zoom.js"></script>
   </body>
 </html>

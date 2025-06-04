@@ -46,8 +46,8 @@
     <nav class="fixed top-0 w-full bg-slate-900/95 backdrop-blur-sm z-50 border-b border-slate-800" id="navbar">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center py-4 nav-container">
-          <div class="ms-4"><img class="w-8 sm:w-11" src="/public/img/personal-logo-portfolio.png" alt="my personal logo"/></div>
-          <div class="flex space-x-5 md:space-x-8 " id="nav-links">
+          <div class="ms-4"><img class="w-8 sm:w-11" src="/public/img/personal-logo-portfolio.png" alt="my personal logo" /></div>
+          <div class="flex space-x-5 md:space-x-8" id="nav-links">
             <a href="#home" class="nav-link hover:text-cyan-400 flex items-center space-x-2">
               <i class="fas fa-home nav-icon text-xs sm:text-base"></i>
               <span class="nav-text">Home</span>
@@ -86,9 +86,9 @@
 
       <div class="text-center z-10 fade-in-up">
         <div class="flex justify-center mb-8">
-          <img class="w-[10rem] md:w-[16rem]" src="/public/img/personal-logo-portfolio.png" alt="" />
+          <img id="personal-logo" class="w-[10rem] md:w-[16rem]" src="/public/img/personal-logo-portfolio.png" alt="" />
         </div>
-        <h1 class="text-5xl md:text-7xl font-bold mb-4">Pierre <span class="text-cyan-400">Avestruz</span></h1>
+        <h1 class="text-4xl md:text-7xl font-bold mb-4">Pierre <span class="text-cyan-400">Avestruz</span></h1>
         <div class="text-xl md:text-2xl text-gray-300 mb-8 typing-animation">Front End Developer</div>
         <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
           Crafting beautiful, responsive, and user-friendly web experiences with modern technologies and creative design solutions.
@@ -202,7 +202,7 @@
               <span class="bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full text-sm">CSS</span>
               <span class="bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full text-sm">JavaScript</span>
               <span class="bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full text-sm">Bootstrap</span>
-              <span class="bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+              <span class="bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full text-sm">SQL</span>
               <span class="bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full text-sm">Django</span>
             </div>
           </div>
@@ -216,7 +216,7 @@
               </div>
               <div class="text-gray-400 mt-2 md:mt-0">
                 <i class="fas fa-calendar-alt mr-2"></i>
-                2024
+                2023 - 2024
               </div>
             </div>
             <p class="text-gray-300 mb-4">
@@ -290,7 +290,11 @@
             <a href="/views/pages/lbelib.html">
               <div class="project-image h-48 flex items-center justify-center overflow-hidden rounded-t-lg">
                 <div class="text-center transform transition-all duration-500 group-hover:scale-105">
-                  <img src="/public/img/lbelib/student/home-page.png" alt="LBELIB Project" class="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110" />
+                  <img
+                    src="/public/img/lbelib/student/home-page.png"
+                    alt="LBELIB Project"
+                    class="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110"
+                  />
                 </div>
               </div>
               <div class="p-6">
@@ -304,7 +308,7 @@
                   <span class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded text-sm">JavaScript</span>
                   <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded text-sm">Bootstrap</span>
                   <span class="bg-green-600/20 text-green-500 px-2 py-1 rounded text-sm">Django</span>
-                  <span class="bg-green-400/20 text-green-300 px-2 py-1 rounded text-sm">Node.js</span>
+                  <span class="bg-green-400/20 text-green-300 px-2 py-1 rounded text-sm">SQL</span>
                 </div>
                 <div class="flex space-x-4">
                   <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors"> <i class="fas fa-external-link-alt mr-1"></i>More Info </a>
@@ -317,72 +321,137 @@
           <div
             class="project bg-slate-900 rounded-lg overflow-hidden card-hover border border-slate-700 transform transition-all duration-500 ease-out hover:scale-110 hover:shadow-2xl hover:shadow-cyan-500/20 hover:border-cyan-500/50 will-change-transform group"
           >
-            <div class="project-image h-48 flex items-center justify-center overflow-hidden">
-              <div class="text-center transform transition-all duration-500 group-hover:scale-105">
-                <img src="/public/img/coffee-shop/coffee-shop.png" alt="Coffee Life" class="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110" />
+            <a href="/views/pages/coffee-shop.html">
+              <div class="project-image h-48 flex items-center justify-center overflow-hidden">
+                <div class="text-center transform transition-all duration-500 group-hover:scale-105">
+                  <img
+                    src="/public/img/coffee-shop/coffee-shop.png"
+                    alt="Coffee Life"
+                    class="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-3">Coffee Life</h3>
-              <p class="text-gray-300 mb-4">
-                Coffee life was a mini project conducted in school to practice basic coding skills and to apply help practice to have clean and responsive coding
-              </p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-sm">HTML/CSS</span>
-                <span class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded text-sm">JavaScript</span>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3">Coffee Life</h3>
+                <p class="text-gray-300 mb-4">
+                  Coffee life was a mini project conducted in school to practice basic coding skills and to apply help practice to have clean and responsive coding
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-sm">HTML/CSS</span>
+                  <span class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded text-sm">JavaScript</span>
+                  <span class="bg-green-600/20 text-green-500 px-2 py-1 rounded text-sm">Django</span>
+                  <span class="bg-green-400/20 text-green-300 px-2 py-1 rounded text-sm">SQL</span>
+                </div>
+                <div class="flex space-x-4">
+                  <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors"> <i class="fas fa-external-link-alt mr-1"></i>More Info </a>
+                </div>
               </div>
-              <div class="flex space-x-4">
-                <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors"> <i class="fas fa-external-link-alt mr-1"></i>More Info </a>
-              </div>
-            </div>
+            </a>
           </div>
 
           <!-- Project 3 -->
           <div
             class="project bg-slate-900 rounded-lg overflow-hidden card-hover border border-slate-700 transform transition-all duration-500 ease-out hover:scale-110 hover:shadow-2xl hover:shadow-cyan-500/20 hover:border-cyan-500/50 will-change-transform group"
           >
-            <div class="project-image h-48 flex items-center justify-center overflow-hidden">
-              <div class="text-center transform transition-all duration-500 group-hover:scale-105">
-                <img src="/public/img/killint intent/killing-intent.png" alt="Killing Intent" class="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110" />
+            <a href="/views/pages/killint-intent.html">
+              <div class="project-image h-48 flex items-center justify-center overflow-hidden">
+                <div class="text-center transform transition-all duration-500 group-hover:scale-105">
+                  <img
+                    src="/public/img/killing-intent/killing-intent.png"
+                    alt="Killing Intent"
+                    class="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-3">Killing Intent</h3>
-              <p class="text-gray-300 mb-4">
-                A Card game where in you play as a detective, investigator or a witness, an idea created by, organized, and managed by me with my team.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-indigo-500/20 text-blue-400 px-2 py-1 rounded text-sm">Canva</span>
-                <span class="bg-zinc-500/20 text-zinc-300 px-2 py-1 rounded text-sm">Unity</span>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3">Killing Intent</h3>
+                <p class="text-gray-300 mb-4">
+                  A Card game where in you play as a detective, investigator or a witness, an idea created by, organized, and managed by me with my team.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-indigo-500/20 text-blue-400 px-2 py-1 rounded text-sm">Canva</span>
+                  <span class="bg-zinc-500/20 text-zinc-300 px-2 py-1 rounded text-sm">Unity</span>
+                </div>
+                <div class="flex space-x-4">
+                  <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors"> <i class="fas fa-external-link-alt mr-1"></i>More Info</a>
+                </div>
               </div>
-              <div class="flex space-x-4">
-                <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors"> <i class="fas fa-external-link-alt mr-1"></i>More Info</a>
-              </div>
-            </div>
+            </a>
           </div>
 
           <!-- Project 4 -->
           <div
             class="project bg-slate-900 rounded-lg overflow-hidden card-hover border border-slate-700 transform transition-all duration-500 ease-out hover:scale-110 hover:shadow-2xl hover:shadow-cyan-500/20 hover:border-cyan-500/50 will-change-transform group"
           >
-            <div class="project-image h-48 flex items-center justify-center overflow-hidden">
-              <div class="text-center transform transition-all duration-500 group-hover:scale-105">
-                <img src="/public/img/arboresque/arboresque.png" alt="Arboresque" class="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110" />
+            <a href="/views/pages/arboresque.html">
+              <div class="project-image h-48 flex items-center justify-center overflow-hidden">
+                <div class="text-center transform transition-all duration-500 group-hover:scale-105">
+                  <img
+                    src="/public/img/arboresque/arboresque.png"
+                    alt="Arboresque"
+                    class="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110"
+                  />
+                </div>
               </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3">Arboresque</h3>
+                <p class="text-gray-300 mb-4">
+                  A Novel game inspired by the famous "Dungeons and Dragons" designed with canva and created with unity with my teammates, story written by myself.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-indigo-500/20 text-blue-400 px-2 py-1 rounded text-sm">Canva</span>
+                  <span class="bg-zinc-500/20 text-zinc-300 px-2 py-1 rounded text-sm">Unity</span>
+                </div>
+                <div class="flex space-x-4">
+                  <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors"> <i class="fas fa-external-link-alt mr-1"></i>More Info</a>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Hidden Projects Grid -->
+          <div id="hiddenProjects" class="hidden">
+            <!-- Project 5 (Example) -->
+            <div
+              class="project bg-slate-900 rounded-lg overflow-hidden card-hover border border-slate-700 transform transition-all duration-500 ease-out hover:scale-110 hover:shadow-2xl hover:shadow-cyan-500/20 hover:border-cyan-500/50 will-change-transform group"
+            >
+              <a href="/views/pages/case-record.html">
+                <div class="project-image h-48 flex items-center justify-center overflow-hidden">
+                  <div class="text-center transform transition-all duration-500 group-hover:scale-105">
+                    <img
+                      src="/public/img/ojt/ojt-login.png"
+                      alt="Your Project"
+                      class="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110"
+                    />
+                  </div>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold mb-3">Case Records Repository</h3>
+                  <p class="text-gray-300 mb-4">Your project description here.</p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <!-- Your tech stack badges -->
+                    <span class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-sm">HTML/CSS</span>
+                    <span class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded text-sm">JavaScript</span>
+                    <span class="bg-green-600/20 text-green-500 px-2 py-1 rounded text-sm">NodeJS</span>
+                    <span class="bg-amber-400/20 text-amber-300 px-2 py-1 rounded text-sm">MariaDB</span>
+                    <span class="bg-sky-500/20 text-sky-400 px-2 py-1 rounded text-sm">React</span>
+                  </div>
+                  <div class="flex space-x-4">
+                    <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors"> <i class="fas fa-external-link-alt mr-1"></i>More Info </a>
+                  </div>
+                </div>
+              </a>
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-3">Arboresque</h3>
-              <p class="text-gray-300 mb-4">
-                A Novel game inspired by the famous "Dungeons and Dragons" designed with canva and created with unity with my teammates, story written by myself.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-indigo-500/20 text-blue-400 px-2 py-1 rounded text-sm">Canva</span>
-                <span class="bg-zinc-500/20 text-zinc-300 px-2 py-1 rounded text-sm">Unity</span>
-              </div>
-              <div class="flex space-x-4">
-                <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors"> <i class="fas fa-external-link-alt mr-1"></i>More Info</a>
-              </div>
-            </div>
+          </div>
+
+          <!-- Show More Button -->
+          <div class="text-center mt-12 col-span-2">
+            <button
+              id="showMoreProjects"
+              class="hover:bg-cyan-600 text-white font-bold px-2 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/30"
+            >
+              <i class="fa-solid fa-caret-down transition-transform duration-300 text-[30px]"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -407,7 +476,7 @@
                 </div>
                 <div>
                   <p class="text-gray-400">Email</p>
-                  <p class="text-white">pierreaves@email.com</p>
+                  <p class="text-white">pierreavest@email.com</p>
                 </div>
               </div>
 
@@ -519,7 +588,9 @@
     <!-- Footer -->
     <footer class="bg-slate-800 border-t border-slate-700 py-5">
       <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div class="text-cyan font-bold text-xl me-0 md:me-8 mb-5 md:mb-0"><img class="w-8 sm:w-11" src="/public/img/personal-logo-portfolio.png" alt="my personal logo"/></div>
+        <div class="text-cyan font-bold text-xl me-0 md:me-8 mb-5 md:mb-0">
+          <img class="w-8 sm:w-11" src="/public/img/personal-logo-portfolio.png" alt="my personal logo" />
+        </div>
         <div>
           <p class="text-gray-400 mb-4">© 2025 Pierre Avestruz. All rights reserved.</p>
           <p class="text-gray-500 text-sm">Built with passion and modern web technologies</p>

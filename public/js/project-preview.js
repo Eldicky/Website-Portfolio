@@ -1,3 +1,5 @@
+import { modalData } from "./modal-data.js";
+
 function toggleMobileMenu() {
   const mobileMenu = document.getElementById("mobileMenu");
   mobileMenu.classList.toggle("hidden");
@@ -34,202 +36,6 @@ window.addEventListener("scroll", function () {
 });
 
 // Modal data for each gallery item
-const modalData = {
-  student: {
-    folder: "student",
-    title: "Student Side User Interface",
-    contents: [
-      {
-        title: "Login Page",
-        img: "login-page",
-      },
-      {
-        title: "Request Account",
-        img: "login-request-account",
-      },
-      {
-        title: "Forgot Password",
-        img: "login-forget-password",
-      },
-      {
-        title: "Home Page",
-        img: "home-page",
-      },
-      {
-        title: "Notification",
-        img: "website-notification",
-      },
-      {
-        title: "Sidebar Expanded",
-        img: "sidebar-expanded",
-      },
-      {
-        title: "Top Viewed Books",
-        img: "home-page-2",
-      },
-      {
-        title: "Book Details",
-        img: "book-detail",
-      },
-      {
-        title: "Book Borrow Request",
-        img: "book-borrow-request",
-      },
-      {
-        title: "Borrow Already Requested",
-        img: "book-borrow-already-requested",
-      },
-      {
-        title: "Book Preview",
-        img: "book-preview",
-      },
-      {
-        title: "Bookmark Book",
-        img: "bookmark-book",
-      },
-      {
-        title: "Remove Bookmark",
-        img: "remove-bookmark",
-      },
-      {
-        title: "Bookmark Page",
-        img: "bookmark-page",
-      },
-      {
-        title: "Change Password",
-        img: "change-password",
-      },
-      {
-        title: "Borrowed Books Page",
-        img: "borrowed-books-page",
-      },
-      {
-        title: "Request History - Pending",
-        img: "request-history-pending",
-      },
-      {
-        title: "Request History - Approved",
-        img: "request-history-approved",
-      },
-      {
-        title: "Request History - Declined",
-        img: "request-history-declined",
-      },
-      {
-        title: "Logout Page",
-        img: "logout",
-      },
-    ],
-  },
-  librarian: {
-    folder: "librarian",
-    title: "Analytics Dashboard",
-    contents: [
-      {
-        title: "Home Page",
-        img: "home-page",
-      },
-      {
-        title: "Upload Page",
-        img: "upload-page",
-      },
-      {
-        title: "Books Page",
-        img: "books-page",
-      },
-      {
-        title: "Book Preview",
-        img: "books-preview",
-      },
-      {
-        title: "Edit Book",
-        img: "edit-book",
-      },
-      {
-        title: "Archive Book",
-        img: "archive-book",
-      },
-      {
-        title: "Books to be Returned",
-        img: "book-status-books-to-be-returned",
-      },
-      {
-        title: "Book Returned",
-        img: "books-to-be-returned-book-returned",
-      },
-      {
-        title: "Return Book Reminder",
-        img: "books-to-be-returned-remind",
-      },
-      {
-        title: "Book Logs",
-        img: "book-status-logs",
-      },
-      {
-        title: "Borrow Requests Page",
-        img: "borrow-request-pending-requests",
-      },
-      {
-        title: "Approve Borrow Request",
-        img: "pending-request-approve-request",
-      },
-      {
-        title: "Decline Borrow Request",
-        img: "pending-request-decline-request",
-      },
-      {
-        title: "Approved Borrow Requests",
-        img: "borrow-request-approved-requests",
-      },
-      {
-        title: "Declined Borrow Request",
-        img: "borrow-request-declined-requests",
-      },
-      {
-        title: "Archived Books Page",
-        img: "archived-books-page",
-      },
-      {
-        title: "Restore Archived Book",
-        img: "archived-books-restore",
-      },
-    ],
-  },
-  admin: {
-    folder: "admin",
-    title: "Task Management Board",
-    contents: [
-      {
-        title: "Overview",
-        img: "overview",
-      },
-      {
-        title: "Activity Logs",
-        img: "activity-logs",
-      },
-      {
-        title: "User List",
-        img: "user-list",
-      },
-      {
-        title: "Disable User",
-        img: "user-list-disable-account",
-      },
-      {
-        title: "Create Account",
-        img: "create-account",
-      },
-      {
-        title: "Import Multiple Users from CSV",
-        img: "import-multiple-accounts-using-csv",
-      },
-      {
-        title: "Book Batch Upload",
-        img: "book-batch-upload",
-      },
-    ],
-  },
-};
 
 function openModal(cardType) {
   const modal = document.getElementById("galleryModal");
@@ -237,7 +43,7 @@ function openModal(cardType) {
   const modalContent = document.getElementById("modalContent");
 
   const data = modalData[cardType];
-  const imgPath = `/public/img/lbelib/${data.folder}/`;
+  const imgPath = `/public/img/${data.folder}/`;
   modalTitle.textContent = data.title;
 
   // Generate modal content
@@ -252,7 +58,7 @@ function openModal(cardType) {
                         <h1 class="text-base md:text-2xl font-bold text-gray-200 mb-4">${content.title}</h1>
                       </div>
                       <div>
-                          <img src="${imgPath}/${content.img}.png" alt="${content.img}" class="mb-4 rounded-lg shadow-lg">
+                          <img src="${imgPath}/${content.img}.png" alt="${content.img}" class="mb-4 rounded-lg shadow-lg max-h-90">
                       </div>
                     </div>
                 </div>
@@ -287,6 +93,9 @@ document.addEventListener("keydown", function (e) {
     closeModal();
   }
 });
+
+window.openModal = openModal;
+window.closeModal = closeModal;
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {

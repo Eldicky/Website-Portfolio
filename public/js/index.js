@@ -120,8 +120,6 @@ if (typingElement) {
   });
   observer.observe(typingElement);
 }
-// Add this JavaScript to your existing script section (REPLACE the existing scroll event listener)
-
 // Navigation scroll behavior - REPLACE your existing window.addEventListener('scroll') with this:
 window.addEventListener("scroll", () => {
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -265,6 +263,7 @@ document.querySelector("form").addEventListener("submit", async function (e) {
   const email = formData.get("email").trim();
   const subject = formData.get("subject").trim();
   const message = formData.get("message").trim();
+  const logo = "https://pierreavestruz-portfolio.netlify.app/public/img/personal-logo-black.png";
 
   // Validation
   if (!name || name.length < 2) {
@@ -310,6 +309,7 @@ document.querySelector("form").addEventListener("submit", async function (e) {
         subject: subject,
         message: message,
         to_email: "pierreaves@email.com",
+        personal_logo: logo,
       }
     );
 
@@ -355,4 +355,36 @@ document.addEventListener("keydown", function (e) {
     closeErrorModal();
     closeRateLimitModal();
   }
+});
+
+// Show more/less projects functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const showMoreBtn = document.getElementById("showMoreProjects");
+  const hiddenProjects = document.getElementById("hiddenProjects");
+
+  showMoreBtn.addEventListener("click", function () {
+    if (hiddenProjects.classList.contains("hidden")) {
+      // Show projects with slide down animation
+      hiddenProjects.classList.remove("hidden");
+      hiddenProjects.classList.add("animate-slideDown");
+
+      // Add fade in animation for cards after slide down starts
+      setTimeout(() => {
+        hiddenProjects.classList.add("animate-fadeInUp");
+      }, 100);
+
+      showMoreBtn.innerHTML = '<i class="fa-solid fa-caret-up transition-transform duration-300 text-[30px]"></i';
+    } else {
+      // Hide projects with slide up animation
+      hiddenProjects.classList.remove("animate-fadeInUp");
+      hiddenProjects.classList.add("animate-fadeOut", "animate-slideUp");
+
+      setTimeout(() => {
+        hiddenProjects.classList.add("hidden");
+        hiddenProjects.classList.remove("animate-slideDown", "animate-slideUp", "animate-fadeOut");
+      }, 400);
+
+      showMoreBtn.innerHTML = '<i class="fa-solid fa-caret-down transition-transform duration-300 text-[30px]"></i>';
+    }
+  });
 });
