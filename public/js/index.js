@@ -363,9 +363,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const hiddenProjects = document.getElementById("hiddenProjects");
 
   showMoreBtn.addEventListener("click", function () {
-    if (hiddenProjects.classList.contains("hidden")) {
+    if (hiddenProjects.classList.contains("md:hidden")) {
       // Show projects with slide down animation
-      hiddenProjects.classList.remove("hidden");
+      hiddenProjects.classList.remove("md:hidden");
       hiddenProjects.classList.add("animate-slideDown");
 
       // Add fade in animation for cards after slide down starts
@@ -380,7 +380,7 @@ document.addEventListener("DOMContentLoaded", function () {
       hiddenProjects.classList.add("animate-fadeOut", "animate-slideUp");
 
       setTimeout(() => {
-        hiddenProjects.classList.add("hidden");
+        hiddenProjects.classList.add("md:hidden");
         hiddenProjects.classList.remove("animate-slideDown", "animate-slideUp", "animate-fadeOut");
       }, 400);
 
